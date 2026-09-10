@@ -1,0 +1,6 @@
+.hero-visual { overflow: hidden; }
+.main-nav a { position: relative; border-bottom: 0; font-weight: 600; transition: color .2s ease, font-weight .2s ease; }
+.main-nav a::after { content: ''; position: absolute; right: 4px; bottom: 17px; left: 4px; height: 3px; border-radius: 2px; background: transparent; transform: scaleX(.45); transition: background .2s ease, transform .2s ease; }
+.main-nav a:hover, .main-nav a.active { color: var(--navy); font-weight: 700; }
+.main-nav a.active::after { background: #9f6f14; transform: scaleX(1); }
+@media (max-width: 640px) { .main-nav a::after { right: auto; bottom: 6px; left: 4px; width: 38px; } .main-nav a.active { color: var(--navy); background: #f4e3b7; } .main-nav a.active::after { background: var(--navy); } }

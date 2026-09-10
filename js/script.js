@@ -110,4 +110,10 @@ menu.addEventListener('click',()=>{const open=nav.classList.toggle('open');menu.
 nav.addEventListener('click',()=>{nav.classList.remove('open');menu.setAttribute('aria-expanded','false')});
 const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}}),{threshold:.12});
 document.querySelectorAll('.reveal').forEach(element=>observer.observe(element));
+const navLinks=Array.from(document.querySelectorAll('.main-nav a'));
+const navSections=[['inicio',document.querySelector('.hero')],['productos',document.querySelector('#productos')],['nosotros',document.querySelector('#nosotros')],['contacto',document.querySelector('#contacto')]];
+function setActiveNav(id){navLinks.forEach(link=>link.classList.toggle('active',link.getAttribute('href')===`#${id}`))}
+const navigationObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting)setActiveNav(entry.target.dataset.navSection)}),{rootMargin:'-18% 0px -68% 0px',threshold:0});
+navSections.forEach(([id,section])=>{if(section){section.dataset.navSection=id;navigationObserver.observe(section)}});
+navLinks.forEach(link=>link.addEventListener('click',()=>setActiveNav(link.getAttribute('href').slice(1))));
 renderProducts();renderCart();
