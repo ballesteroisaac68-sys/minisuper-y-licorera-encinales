@@ -22,3 +22,5 @@ Desde la raiz del proyecto ejecuta `python -m http.server 8000` y visita `http:/
 ## Despliegue en Render
 
 Crea un **Static Site**, conecta este directorio o repositorio y deja el directorio de publicacion como la raiz (`.`). No requiere comando de build ni variables de entorno.
+
+Probando colaboracion 
