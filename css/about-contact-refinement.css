@@ -1,0 +1,20 @@
+﻿/* Focused improvements for the About and Contact areas. */
+.about-copy > p { max-width: 58ch; margin: 0 0 14px; color: #43596a; line-height: 1.72; }
+.about-copy ul { display: grid; gap: 12px; margin-top: 25px; }
+.about-copy li { display: flex; align-items: center; gap: 10px; margin: 0; }
+.about-copy .about-check { display: grid; flex: 0 0 21px; width: 21px; height: 21px; margin: 0; border-radius: 50%; place-items: center; background: var(--green); color: #fff; font-size: 12px; font-weight: 700; }
+.contact-layout { grid-template-columns: minmax(0, 1.1fr) minmax(265px, .9fr) auto; align-items: center; }
+.contact-details { display: grid; gap: 0; padding-left: 30px; }
+.contact-detail { display: flex; align-items: flex-start; gap: 10px; margin: 0 0 11px !important; color: #e0e7eb; line-height: 1.42; }
+.contact-detail:last-child { margin-bottom: 0 !important; }
+.contact-detail > span:last-child { display: grid; gap: 2px; }
+.contact-details strong { display: block; }
+.contact-icon { position: relative; flex: 0 0 22px; width: 22px; height: 22px; margin-top: 1px; border: 1px solid rgba(245, 228, 183, .72); border-radius: 50%; }
+.contact-icon::before,.contact-icon::after { content: ''; position: absolute; display: block; }
+.icon-location::before { width: 6px; height: 6px; top: 5px; left: 6px; border: 2px solid var(--gold); border-radius: 50%; }.icon-location::after { width: 0; height: 5px; left: 9px; bottom: 2px; border-left: 2px solid var(--gold); transform: rotate(30deg); }
+.icon-phone::before { width: 8px; height: 12px; top: 3px; left: 6px; border: 2px solid var(--gold); border-top: 0; border-bottom: 0; border-radius: 5px; transform: rotate(-37deg); }
+.icon-mail::before { width: 11px; height: 8px; top: 6px; left: 4px; border: 1.5px solid var(--gold); border-radius: 1px; }.icon-mail::after { width: 7px; height: 7px; top: 5px; left: 6px; border-right: 1.5px solid var(--gold); border-bottom: 1.5px solid var(--gold); transform: rotate(45deg); }
+.icon-clock::before { width: 8px; height: 8px; top: 5px; left: 5px; border: 1.5px solid var(--gold); border-radius: 50%; }.icon-clock::after { width: 1.5px; height: 5px; top: 6px; left: 10px; background: var(--gold); transform-origin: bottom; transform: rotate(-42deg); }
+.contact-actions { justify-self: end; align-self: center; }.contact-actions .button { white-space: nowrap; }
+@media (max-width: 850px) { .contact-layout { grid-template-columns: 1fr 1fr; }.contact-actions { grid-column: 2; justify-self: start; }.contact-details { padding-left: 22px; } }
+@media (max-width: 640px) { .about-copy > p { max-width: none; line-height: 1.68; }.about-copy .about-check { flex-basis: 20px; width: 20px; height: 20px; }.contact-layout { grid-template-columns: 1fr; }.contact-details { padding: 20px 0 8px; }.contact-actions { grid-column: auto; justify-self: start; }.contact-actions .button { min-width: 170px; }.contact-detail { margin-bottom: 12px !important; } }
